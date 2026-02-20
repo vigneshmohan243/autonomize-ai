@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": ["patient_id", "age", "conditions"],
+  "properties": {
+    "patient_id": { "type": "string" },
+    "age": { "type": "integer", "minimum": 0, "maximum": 120 },
+    "conditions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

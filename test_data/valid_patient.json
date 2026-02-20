@@ -1,0 +1,5 @@
+{
+  "patient_id": "PAT-1001",
+  "age": 67,
+  "conditions": ["diabetes", "hypertension"]
+}

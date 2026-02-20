@@ -1,0 +1,45 @@
+name: Playwright
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: playwright/package-lock.json
+
+      - name: Install Playwright dependencies
+        run: npm ci
+        working-directory: playwright
+
+      - name: Install Playwright Browsers
+        run: npm playinstall
+        working-directory: playwright
+
+      - name: Run Playwright tests
+        run: npm test
+        working-directory: playwright
+
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts
+          path: |
+            playwright/playwright-report/
+            playwright/test-results/
+          if-no-files-found: ignore
