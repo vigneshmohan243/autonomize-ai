@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "autonomize-qa-assignment"
+version = "1.0.0"
+description = "QA automation suite for Agentic Platform data validation and model integration"
+authors = ["Vignesh M"]
+readme = "README.md"
+packages = [{ include = "utils" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "2.32.3"
+jsonschema = "4.23.0"
+PyYAML = "6.0.2"
+pytest = "8.3.2"
+pytest-html = "4.1.1"
+pytest-xdist = "3.6.1"
+
+[tool.pytest.ini_options]
+addopts = [
+"-v",
+"--html=reports/test_report.html",
+"--self-contained-html"
+]
+testpaths = ["tests"]
+markers = [
+  "high: High priority tests",
+  "negative: Negative tests",
+  "edge: Edge cases",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
