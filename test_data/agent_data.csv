@@ -1,0 +1,17 @@
+id,scenario,patient_id,age,conditions,expected_status
+valid_1,valid,PAT-1001,67,diabetes;hypertension,200
+valid_2,valid,PAT-1002,45,asthma,200
+valid_3,valid,PAT-1003,22,,200
+valid_4,valid,PAT-1004,89,diabetes;hypertension;copd,200
+valid_5,valid,PAT-1005,34,hypertension,200
+valid_6,valid,PAT-1006,56,diabetes;asthma,200
+valid_7,valid,PAT-1007,71,,200
+valid_8,valid,PAT-1008,18,asthma;allergies,200
+missing_patient_id,invalid,,67,diabetes,400
+missing_age,invalid,PAT-1010,,hypertension,400
+missing_conditions_field,invalid,PAT-1011,50,,200
+invalid_age_negative,invalid,PAT-1012,-1,diabetes,400
+invalid_age_over,invalid,PAT-1013,121,diabetes,400
+empty_patient_id,invalid,,44,asthma,400
+empty_payload,invalid,,,,400
+malformed_conditions,invalid,PAT-1015,60,not_a_list,400

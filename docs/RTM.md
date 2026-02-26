@@ -19,8 +19,6 @@ with emphasis on clinical safety and data integrity.
 | RQ-MI-003  | Handle variations in input format                              | Data robustness        | P1       | TC-MI-002               | Automated              |
 | RQ-UI-001  | Prevent upload of incorrect medical chart format               | User error             | P1       | TC-UI-001               | Automated (Playwright) |
 | RQ-UI-002  | Prevent upload exceeding allowed limits                        | System stability       | P1       | TC-UI-002               | Automated (Playwright) |
-| RQ-NFR-001 | CI/CD invocable automation framework                           | Release safety         | P1       | All                     | Automated              |
-| RQ-NFR-002 | HTML reporting of execution results                            | Observability          | P2       | All                     | Automated              |
 
 ### 🧪 Detailed Traceability View
 #### Agent Integration Coverage
@@ -48,7 +46,6 @@ with emphasis on clinical safety and data integrity.
 ### Identified Gaps & Future Enhancements
 
 Recommended for next phase:
-- Performance/load testing of agent pipeline
 - PHI masking validation
 - Audit logging verification
 - Model bias testing

@@ -11,6 +11,10 @@ Create a comprehensive test suite and methodology to validate an Agentic Platfor
 - Compliance  
 - Data integrity  
 
+## Repository Diagram
+
+- Full repository flow (Mermaid): [docs/repo_overview.md](docs/repo_overview.md)
+
 This repository demonstrates a risk-based, automation-first approach to ensure reliable simulated patient interactions across agent workflows and AI model pipelines.
 
 ## Scenario Coverage
